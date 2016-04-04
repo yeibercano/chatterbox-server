@@ -21,7 +21,7 @@ var requestHandler = function(request, response) {
   //
   // Documentation for both request and response can be found in the HTTP section at
   // http://nodejs.org/documentation/api/
-
+  console.log(response);
   // Do some basic logging.
   //
   // Adding more logging to your server can be an easy way to get passive
@@ -31,7 +31,7 @@ var requestHandler = function(request, response) {
 
   // The outgoing status.
   var statusCode = 200;
-
+  console.log(statusCode);
   // See the note below about CORS headers.
   var headers = defaultCorsHeaders;
 
@@ -52,9 +52,11 @@ var requestHandler = function(request, response) {
   //
   // Calling .end "flushes" the response's internal buffer, forcing
   // node to actually send all the data over to the client.
-  response.end("Hello, World!");
+  response.end(true);
+
 };
 
+exports.requestHandler = requestHandler;
 // These headers will allow Cross-Origin Resource Sharing (CORS).
 // This code allows this server to talk to websites that
 // are on different domains, for instance, your chat client.

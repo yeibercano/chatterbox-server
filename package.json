@@ -5,7 +5,8 @@
   "author": "[[ SCHOOL_NAME ]]",
   "license": "Copyright 2013, [[ SCHOOL_NAME ]]. All rights reserved.",
   "scripts": {
-    "test": "mocha server/spec"
+    "test": "mocha server/spec",
+    "start": "nodemon server/basic-server.js"
   },
   "devDependencies": {
     "mocha": "^1.21.4",
