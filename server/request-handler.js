@@ -51,6 +51,15 @@ var requestHandler = function(request, response) {
   // Calling .end "flushes" the response's internal buffer, forcing
   // node to actually send all the data over to the client.
   // response.end("Hello, World!");
+
+ //another idea - check whether the request is GET or POST
+
+ // if(request.method === 'GET') {
+    
+ // } else if (request.method === 'POST') {
+
+ // } 
+  
   var results = [];
   request.on('data', function(chunk) {
     results.push(chunk);
