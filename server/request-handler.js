@@ -33,12 +33,12 @@ var requestHandler = function(request, response) {
   // See the note below about CORS headers.
   var headers = defaultCorsHeaders;
   // console.log('request :',request);
-  // console.log('response :',response);
   // Tell the client we are sending them plain text.
   //
   // You will need to change this if you are sending something
   // other than plain text, like JSON or HTML.
   headers['content-type'] = "text/json";
+
 
   // .writeHead() writes to the request line and headers of the response,
   // which includes the status and all headers.
@@ -52,6 +52,11 @@ var requestHandler = function(request, response) {
   // node to actually send all the data over to the client.
   // response.end("Hello, World!");
   var results = [];
+  request.on('data', function(chunk) {
+    results.push(chunk);
+  });
+  // console.log(results);
+
   response.end(JSON.stringify({results:results}));
 };
 
