@@ -32,17 +32,17 @@ var requestHandler = function(request, response) {
   var statusCode = 200;
   // See the note below about CORS headers.
   var headers = defaultCorsHeaders;
-
+  // console.log('request :',request);
+  // console.log('response :',response);
   // Tell the client we are sending them plain text.
   //
   // You will need to change this if you are sending something
   // other than plain text, like JSON or HTML.
-  headers['access-control-allow-methods'] = "text/plain";
+  headers['content-type'] = "text/json";
 
   // .writeHead() writes to the request line and headers of the response,
   // which includes the status and all headers.
   response.writeHead(statusCode, headers);
-  response.end(JSON.stringify({foo:'bar'}));
   // Make sure to always call response.end() - Node may not send
   // anything back to the client until you do. The string you pass to
   // response.end() will be the body of the response - i.e. what shows
@@ -51,7 +51,8 @@ var requestHandler = function(request, response) {
   // Calling .end "flushes" the response's internal buffer, forcing
   // node to actually send all the data over to the client.
   // response.end("Hello, World!");
-
+  var results = [];
+  response.end(JSON.stringify({results:results}));
 };
 
 
