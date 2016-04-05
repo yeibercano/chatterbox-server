@@ -6,7 +6,7 @@
 ///////////////////////////////////////////////////////////////////////
 
 var Message = Backbone.Model.extend({
-  url: 'https://api.parse.com/1/classes/chatterbox',
+  url: 'http://127.0.0.1:3000/',
   
   defaults: {
     username:'',
@@ -17,7 +17,7 @@ var Message = Backbone.Model.extend({
 
 var Messages = Backbone.Model.extend({
   model: Message,
-  url: 'https://api.parse.com/1/classes/chatterbox',
+  url: 'http://127.0.0.1:3000/',
 
   loadMsgs: function() {
     this.fetch({
